@@ -1,0 +1,72 @@
+<main class="landing-container">
+  <!-- Navigation Bar Component -->
+  <!-- <app-navbar></app-navbar> -->
+
+  <!-- Hero Carousel -->
+  <section class="hero-carousel">
+    <ngb-carousel>
+      <ng-template ngbSlide>
+        <img src="assets/images/slide1.jpg" alt="Immigration Opportunities" />
+        <div class="carousel-caption">
+          <h3>Explore Global Immigration Opportunities</h3>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <img src="assets/images/slide2.jpg" alt="Visa Services" />
+        <div class="carousel-caption">
+          <h3>Reliable Visa Services – No False Promises</h3>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <img src="assets/images/slide3.jpg" alt="Career Abroad" />
+        <div class="carousel-caption">
+          <h3>Your Career Abroad Starts Here</h3>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </section>
+
+  <!-- Country Flags Section -->
+  <section class="country-section">
+    <h2>Select a Country to Explore Visa Options</h2>
+    <div class="flag-grid">
+      <div class="flag-card" (click)="openCountryModal('Canada')">
+        <img src="assets/flags/canada.png" alt="Canada" />
+        <p>Canada</p>
+      </div>
+      <div class="flag-card" (click)="openCountryModal('Australia')">
+        <img src="assets/flags/australia.png" alt="Australia" />
+        <p>Australia</p>
+      </div>
+      <div class="flag-card" (click)="openCountryModal('USA')">
+        <img src="assets/flags/usa.png" alt="USA" />
+        <p>USA</p>
+      </div>
+      <div class="flag-card" (click)="openCountryModal('Sweden')">
+        <img src="assets/flags/sweden.png" alt="Sweden" />
+        <p>Sweden</p>
+      </div>
+      <div class="flag-card" (click)="openCountryModal('Germany')">
+        <img src="assets/flags/germany.png" alt="Germany" />
+        <p>Germany</p>
+      </div>
+      <div class="flag-card" (click)="openCountryModal('Italy')">
+        <img src="assets/flags/italy.png" alt="Italy" />
+        <p>Italy</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Country Modal Template -->
+  <ng-template #countryModal let-country="country">
+    <div class="modal-header">
+      <h4 class="modal-title">Visa Information: {{ country }}</h4>
+      <button type="button" class="close" aria-label="Close" >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>More information about visa types, requirements, and processing time for {{ country }}.</p>
+    </div>
+  </ng-template>
+</main>
